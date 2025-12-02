@@ -62,13 +62,13 @@ const Hero = () => {
             <Button variant="hero" size="xl" onClick={scrollToArtists}>
               Explore Artists
             </Button>
-            <Button variant="outline" size="xl" onClick={scrollToArtists} className="border-border hover:border-secondary">
+            {/* <Button variant="outline" size="xl" onClick={scrollToArtists} className="border-border hover:border-secondary">
               View Pricing
-            </Button>
+            </Button> */}
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-border max-w-lg mx-auto animate-fade-in-up animation-delay-400">
+          {/* <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-border max-w-lg mx-auto animate-fade-in-up animation-delay-400">
             <div className="text-center">
               <div className="font-serif text-3xl md:text-4xl font-bold text-gradient-gold">50+</div>
               <div className="text-sm text-muted-foreground mt-1">Artists</div>
@@ -81,7 +81,7 @@ const Hero = () => {
               <div className="font-serif text-3xl md:text-4xl font-bold text-gradient-gold">100%</div>
               <div className="text-sm text-muted-foreground mt-1">Satisfaction</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

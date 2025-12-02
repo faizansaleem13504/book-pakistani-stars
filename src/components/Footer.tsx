@@ -86,12 +86,12 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-muted-foreground">
                   <Phone className="w-4 h-4 text-secondary" />
-                  <span>+92 300 1234567</span>
+                  <span>+92 321 4949155</span>
                 </li>
-                <li className="flex items-center gap-3 text-muted-foreground">
+                {/* <li className="flex items-center gap-3 text-muted-foreground">
                   <Mail className="w-4 h-4 text-secondary" />
                   <span>info@hiresinger.pk</span>
-                </li>
+                </li> */}
                 <li className="flex items-start gap-3 text-muted-foreground">
                   <MapPin className="w-4 h-4 text-secondary mt-1" />
                   <span>Lahore, Pakistan</span>
@@ -109,14 +109,14 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground">
               © {currentYear} HireSinger.pk. All rights reserved.
             </p>
-            <div className="flex items-center gap-6 text-sm">
+            {/* <div className="flex items-center gap-6 text-sm">
               <a href="#" className="text-muted-foreground hover:text-secondary transition-colors">
                 Privacy Policy
               </a>
               <a href="#" className="text-muted-foreground hover:text-secondary transition-colors">
                 Terms of Service
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
