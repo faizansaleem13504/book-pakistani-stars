@@ -2,13 +2,21 @@ import { useState } from 'react';
 import { artists, categories, Artist } from '@/data/artists';
 import ArtistCard from './ArtistCard';
 import { cn } from '@/lib/utils';
+import { Input } from '@/components/ui/input';
+import { Search } from 'lucide-react';
 
 const ArtistGrid = () => {
   const [activeCategory, setActiveCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredArtists = activeCategory === 'all' 
-    ? artists 
-    : artists.filter(artist => artist.category === activeCategory);
+  const filteredArtists = artists.filter(artist => {
+    const matchesCategory = activeCategory === 'all' || artist.category === activeCategory;
+    const matchesSearch = searchQuery === '' || 
+      artist.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      artist.genre.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      artist.description.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <section id="artists" className="py-20 md:py-32">
@@ -18,12 +26,26 @@ const ArtistGrid = () => {
           <span className="text-sm uppercase tracking-widest text-secondary font-medium mb-4 block">
             Our Roster
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Meet Our <span className="text-gradient-gold">Artists</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             From soulful Sufi singers to energetic rock bands, discover the perfect artist to make your event unforgettable.
           </p>
+        </div>
+
+        {/* Search Box */}
+        <div className="max-w-md mx-auto mb-8">
+          <div className="relative">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <Input
+              type="text"
+              placeholder="Search by name, genre, or style..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-12 h-12 bg-card border-border text-base rounded-full focus:border-secondary focus:ring-secondary"
+            />
+          </div>
         </div>
 
         {/* Category Filter */}
