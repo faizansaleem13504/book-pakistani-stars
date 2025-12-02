@@ -19,9 +19,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-secondary to-gold-glow flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Music2 className="w-5 h-5 text-secondary-foreground" />
-            </div>
+            <img src='/hiresinger_logo.png' className="w-10 h-10 rounded-lg text-secondary-foreground" />
             <span className="font-serif text-xl md:text-2xl font-bold">
               Hire<span className="text-gradient-gold">Singer</span>
             </span>
